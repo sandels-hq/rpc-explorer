@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  cloudflared:
+    image: cloudflare/cloudflared
+    restart: unless-stopped
+    volumes:
+      - /root/.cloudflared:/etc/cloudflared
+    command: tunnel run
